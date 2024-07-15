@@ -15,6 +15,7 @@ class EditPageView: UIView {
     imageView.layer.borderColor = UIColor.black.cgColor
     imageView.layer.borderWidth = 1
     imageView.layer.cornerRadius = 75
+    imageView.clipsToBounds = true
     return imageView
   }()
   let createRandomProfileImage: UIButton = {

@@ -56,7 +56,6 @@ class EditPageViewController: UIViewController {
     } else {
       phoneBook = NSManagedObject(entity: entity, insertInto: self.container.viewContext)
     }
-    
     phoneBook.setValue(name, forKey: "name")
     phoneBook.setValue(phoneNumber, forKey: "phoneNumber")
     if let imageData = image.pngData() {
@@ -66,7 +65,7 @@ class EditPageViewController: UIViewController {
     do {
       try self.container.viewContext.save()
     } catch {
-      print("Failed to save data: \(error)")
+      print("")
     }
   }
   

@@ -18,7 +18,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     super.viewDidLoad()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     self.container = appDelegate.persistentContainer
-    
     setUpTableView()
     
   }
@@ -48,7 +47,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       let phoneBooks = try self.container.viewContext.fetch(fetchRequest)
       friends = phoneBooks
     } catch {
-      print("친구 데이터를 불러오는 중 오류 발생")
+      print("")
     }
   }
   
@@ -77,13 +76,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    
     let friend = friends[indexPath.row]
     let editPageViewController = EditPageViewController()
     editPageViewController.friend = friend
     editPageViewController.container = container
     editPageViewController.title = friend.value(forKey: "name") as? String
     self.navigationController?.pushViewController(editPageViewController, animated: true)
-    
   }
 }

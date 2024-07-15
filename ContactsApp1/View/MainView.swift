@@ -2,7 +2,6 @@ import UIKit
 import SnapKit
 
 class MainView: UIView {
-  
   let friendsTableView: UITableView = {
     let tableView = UITableView()
     tableView.rowHeight = 60
