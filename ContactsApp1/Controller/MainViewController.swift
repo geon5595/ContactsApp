@@ -2,8 +2,8 @@ import UIKit
 import CoreData
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-  var container: NSPersistentContainer!
   var friends: [NSManagedObject] = []
+  var container: NSPersistentContainer!
   var mainView: MainView!
   
   override func loadView() {
@@ -19,7 +19,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     self.container = appDelegate.persistentContainer
     setUpTableView()
-    
   }
   
   override func viewIsAppearing(_ animated: Bool) {

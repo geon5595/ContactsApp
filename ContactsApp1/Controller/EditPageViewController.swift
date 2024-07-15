@@ -6,7 +6,6 @@ class EditPageViewController: UIViewController {
   var friend: NSManagedObject?
   var container: NSPersistentContainer!
   var editPageView: EditPageView!
-  var savedImage: String = ""
   
   override func loadView() {
     editPageView = EditPageView(frame: UIScreen.main.bounds)
